@@ -1,7 +1,7 @@
 package com.comejia.dds.prenda;
 
-public enum Color {
-    AMARILLO,
-    NARANJA,
-    ROJO
+public class Color {
+    Integer red;
+    Integer green;
+    Integer blue;
 }
