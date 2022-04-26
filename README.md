@@ -19,3 +19,8 @@ Requerimientos [Segunda Iteración](/src/main/resources/que_me_pongo_segunda_ite
 * Como usuarie de QuéMePongo, quiero guardar un borrador de la la última prenda que empecé a cargar para continuar después.
 * Como usuarie de QuéMePongo, quiero poder no indicar ninguna trama para una tela, y que por defecto ésta sea lisa.
 * Como usuarie de QuéMePongo, quiero poder guardar una prenda solamente si esta es válida.
+
+Bonus:
+* Como usuario QueMePongo, quiero poder recibir sugerencias de uniformes armados. 
+* Como usuario QueMePongo, quiero que un uniforme siempre conste de una prenda superior, una inferior y un calzado 
+* Como administrador de QueMePongo, quiero poder configurar diferentes uniformes para distintas instituciones (Ej: para el colegio San Juan debe ser una chomba verde de piqué, un pantalón de acetato gris y zapatillas blancas, mientras que para el Instituto Johnson siempre será una camisa blanca, pantalón de vestir negro y zapatos negros)
