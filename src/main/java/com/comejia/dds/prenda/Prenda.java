@@ -6,23 +6,32 @@ public class Prenda {
 
     private final TipoDePrenda tipoDePrenda;
     private Material material;
+    private Trama trama = Trama.LISA;
     private Color colorPrincipal;
     private Color colorSecundario;
 
-    public Prenda(TipoDePrenda tipoDePrenda, Material material, Color colorPrincipal, Color colorSecundario) {
+    public Prenda(TipoDePrenda tipoDePrenda, Material material, Trama trama, Color colorPrincipal, Color colorSecundario) {
         if (tipoDePrenda == null) {
             throw new PrendaInvalidaException("Tipo de prenda no valido");
         }
         if (material == null) {
             throw new PrendaInvalidaException("Material no valido");
         }
+        if (trama == null) {
+            throw new PrendaInvalidaException("Trama no valido");
+        }
         if (colorPrincipal == null) {
             throw new PrendaInvalidaException("Color no valido");
         }
         this.tipoDePrenda = tipoDePrenda;
         this.material = material;
+        this.trama = trama;
         this.colorPrincipal = colorPrincipal;
         this.colorSecundario = colorSecundario;
+    }
+
+    public Prenda(TipoDePrenda tipoDePrenda, Material material, Color colorPrincipal, Color colorSecundario) {
+        this(tipoDePrenda, material, Trama.LISA, colorPrincipal, colorSecundario);
     }
 
     public Categoria categoria() {
