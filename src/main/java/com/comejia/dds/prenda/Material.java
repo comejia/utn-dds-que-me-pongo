@@ -2,5 +2,9 @@ package com.comejia.dds.prenda;
 
 public enum Material {
     ALGODON,
-    LANA
+    LANA,
+    PIQUE,
+    ACETATO,
+    SEDA,
+    CUERO
 }

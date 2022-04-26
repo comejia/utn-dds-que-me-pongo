@@ -8,7 +8,7 @@ public enum TipoDePrenda {
             return Categoria.CALZADO;
         }
     },
-    CAMINSA_MANGA_CORTA {
+    CAMISA_MANGA_CORTA {
         @Override
         public Categoria categoria() {
             return Categoria.PARTE_SUPERIOR;
@@ -18,6 +18,18 @@ public enum TipoDePrenda {
         @Override
         public Categoria categoria() {
             return Categoria.PARTE_INFERIOR;
+        }
+    },
+    CHOMBA {
+        @Override
+        public Categoria categoria() {
+            return Categoria.PARTE_SUPERIOR;
+        }
+    },
+    ZAPATILLAS {
+        @Override
+        public Categoria categoria() {
+            return Categoria.CALZADO;
         }
     };
 
