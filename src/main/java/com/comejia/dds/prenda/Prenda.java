@@ -6,7 +6,7 @@ public class Prenda {
 
     private final TipoDePrenda tipoDePrenda;
     private Material material;
-    private Trama trama = Trama.LISA;
+    private Trama trama;
     private Color colorPrincipal;
     private Color colorSecundario;
 
@@ -28,10 +28,6 @@ public class Prenda {
         this.trama = trama;
         this.colorPrincipal = colorPrincipal;
         this.colorSecundario = colorSecundario;
-    }
-
-    public Prenda(TipoDePrenda tipoDePrenda, Material material, Color colorPrincipal, Color colorSecundario) {
-        this(tipoDePrenda, material, Trama.LISA, colorPrincipal, colorSecundario);
     }
 
     public Categoria categoria() {
