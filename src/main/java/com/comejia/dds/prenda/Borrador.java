@@ -20,7 +20,8 @@ public class Borrador {
   }
 
   public Borrador indicarMaterial(Material material) {
-    /*if (!esMaterialConsistenteConTipoPrenda(material)) { // El requisito no especifica como validar la consistencia
+    // El requisito no especifica como validar la consistencia
+    /*if (!esMaterialConsistenteConTipoPrenda(material)) {
       throw new PrendaInvalidaException("El material no es consistente");
     }*/
     this.material = material;
@@ -59,7 +60,8 @@ public class Borrador {
 
   public Prenda build() {
     validarPrenda();
-    return new Prenda(this.tipoDePrenda, this.material, this.trama, this.colorPrincipal, this.colorSecundario);
+    return new Prenda(this.tipoDePrenda, this.material, this.trama,
+        this.colorPrincipal, this.colorSecundario);
   }
 
 }
