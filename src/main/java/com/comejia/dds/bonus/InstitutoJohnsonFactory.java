@@ -6,25 +6,28 @@ public class InstitutoJohnsonFactory implements EstablecimientoAbstractFactory {
 
     @Override
     public Prenda crearParteSuperior() {
-        PrendaBuilder builder = new PrendaBuilder(TipoDePrenda.CAMISA_MANGA_CORTA);
-        builder.indicarColorPrincipal(new Color());
-        builder.indicarMaterial(Material.ALGODON);
-        return builder.build();
+        Borrador builder = new Borrador(Trama.LISA);
+        return builder.indicarTipoPrenda(TipoDePrenda.CAMISA_MANGA_CORTA)
+                .indicarColorPrincipal(new Color())
+                .indicarMaterial(Material.ALGODON)
+                .build();
     }
 
     @Override
     public Prenda crearParteInferior() {
-        PrendaBuilder builder = new PrendaBuilder(TipoDePrenda.PANTALON);
-        builder.indicarColorPrincipal(new Color());
-        builder.indicarMaterial(Material.SEDA);
-        return builder.build();
+        Borrador builder = new Borrador(Trama.LISA);
+        return builder.indicarTipoPrenda(TipoDePrenda.PANTALON)
+                .indicarColorPrincipal(new Color())
+                .indicarMaterial(Material.SEDA)
+                .build();
     }
 
     @Override
     public Prenda crearCalzado() {
-        PrendaBuilder builder = new PrendaBuilder(TipoDePrenda.ZAPATOS);
-        builder.indicarColorPrincipal(new Color());
-        builder.indicarMaterial(Material.CUERO);
-        return builder.build();
+        Borrador builder = new Borrador(Trama.LISA);
+        return builder.indicarTipoPrenda(TipoDePrenda.ZAPATOS)
+                .indicarColorPrincipal(new Color())
+                .indicarMaterial(Material.CUERO)
+                .build();
     }
 }

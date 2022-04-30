@@ -6,25 +6,28 @@ public class ColegioSanJuanFactory implements EstablecimientoAbstractFactory {
 
     @Override
     public Prenda crearParteSuperior() {
-        PrendaBuilder builder = new PrendaBuilder(TipoDePrenda.CHOMBA);
-        builder.indicarColorPrincipal(new Color());
-        builder.indicarMaterial(Material.PIQUE);
-        return builder.build();
+        Borrador builder = new Borrador(Trama.LISA);
+        return builder.indicarTipoPrenda(TipoDePrenda.CHOMBA)
+                .indicarColorPrincipal(new Color())
+                .indicarMaterial(Material.PIQUE)
+                .build();
     }
 
     @Override
     public Prenda crearParteInferior() {
-        PrendaBuilder builder = new PrendaBuilder(TipoDePrenda.PANTALON);
-        builder.indicarColorPrincipal(new Color());
-        builder.indicarMaterial(Material.ACETATO);
-        return builder.build();
+        Borrador builder = new Borrador(Trama.LISA);
+        return builder.indicarTipoPrenda(TipoDePrenda.PANTALON)
+                .indicarColorPrincipal(new Color())
+                .indicarMaterial(Material.ACETATO)
+                .build();
     }
 
     @Override
     public Prenda crearCalzado() {
-        PrendaBuilder builder = new PrendaBuilder(TipoDePrenda.ZAPATILLAS);
-        builder.indicarColorPrincipal(new Color());
-        builder.indicarMaterial(Material.ALGODON);
-        return builder.build();
+        Borrador builder = new Borrador(Trama.LISA);
+        return builder.indicarTipoPrenda(TipoDePrenda.ZAPATILLAS)
+                .indicarColorPrincipal(new Color())
+                .indicarMaterial(Material.ALGODON)
+                .build();
     }
 }
