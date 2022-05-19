@@ -10,7 +10,6 @@ public class Guardarropas {
   List<Prenda> prendasSuperiores;
   List<Prenda> prendasInferiores;
   List<Prenda> calzados;
-  List<Prenda> prendasCabezas;
 
   public Guardarropas() {
     this.prendasSuperiores = Arrays.asList(
@@ -32,8 +31,8 @@ public class Guardarropas {
 
   public List<Atuendo> sugerirAtuendos() {
     return Arrays.asList(
-        new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado(), generarCabezas()),
-        new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado(), generarCabezas())
+        new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado()),
+        new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado())
     );
   }
 
@@ -49,7 +48,4 @@ public class Guardarropas {
     return this.calzados.stream().findAny().get();
   }
 
-  public Prenda generarCabezas() {
-    return this.prendasCabezas.stream().findAny().get();
-  }
 }
