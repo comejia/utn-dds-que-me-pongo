@@ -1,25 +1,32 @@
 package com.comejia.dds.clima;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ServicioClimaAccuWeather implements ServicioClima {
 
-  AccuWeatherAPI api;
+  private final Map<String, Map<String, Object>> consultas;
 
-  public ServicioClimaAccuWeather(AccuWeatherAPI api) {
-    this.api = api;
+  private final AccuWeatherAPI apiClima;
+
+  public ServicioClimaAccuWeather(AccuWeatherAPI apiClima) {
+    this.apiClima = apiClima;
+    this.consultas = new HashMap<>();
   }
 
   @Override
   public CondicionClimatica obtenerCondicionesClimaticas(String ciudad) {
-    Map<String, Object> consulta = consultarAPI(ciudad);
-    int temperatura = getTemperatura(consulta);
-    int precipitacion = getPrecipitacion(consulta);
+    if(!this.consultas.containsKey(ciudad)) {
+      this.consultas.put(ciudad, consultarAPI(ciudad));
+    }
+
+    int temperatura = getTemperatura(this.consultas.get(ciudad));
+    int precipitacion = getPrecipitacion(this.consultas.get(ciudad));
     return new CondicionClimatica(precipitacion, temperatura);
   }
 
   private Map<String, Object> consultarAPI(String ciudad) {
-    return this.api.getWeather(ciudad).get(0);
+    return this.apiClima.getWeather(ciudad).get(0);
   }
 
   private int getTemperatura(Map<String, Object> consulta) {
