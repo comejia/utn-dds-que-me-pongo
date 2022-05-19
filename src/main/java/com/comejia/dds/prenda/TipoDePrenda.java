@@ -31,6 +31,18 @@ public enum TipoDePrenda {
     public Categoria categoria() {
       return Categoria.CALZADO;
     }
+  },
+  GORRO {
+      @Override
+      public Categoria categoria() {
+          return Categoria.CABEZA;
+      }
+  },
+  SOMBRERO {
+    @Override
+    public Categoria categoria() {
+      return Categoria.CABEZA;
+    }
   };
 
   public abstract Categoria categoria();

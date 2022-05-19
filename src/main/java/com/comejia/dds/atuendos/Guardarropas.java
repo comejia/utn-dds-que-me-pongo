@@ -7,40 +7,49 @@ import java.util.List;
 
 public class Guardarropas {
 
-    List<Prenda> prendasSuperiores;
-    List<Prenda> prendasInferiores;
-    List<Prenda> calzados;
+  List<Prenda> prendasSuperiores;
+  List<Prenda> prendasInferiores;
+  List<Prenda> calzados;
+  List<Prenda> prendasCabezas;
 
-    public Guardarropas() {
-        this.prendasSuperiores = Arrays.asList(
-                new Prenda(TipoDePrenda.CAMISA_MANGA_CORTA, Material.ALGODON, Trama.LISA, new Color(), null),
-                new Prenda(TipoDePrenda.CHOMBA, Material.ALGODON, Trama.LISA, new Color(), null)
-        );
-        this.prendasInferiores = Arrays.asList(
-                new Prenda(TipoDePrenda.PANTALON, Material.ALGODON, Trama.LISA, new Color(), null)
-        );
-        this.calzados = Arrays.asList(
-                new Prenda(TipoDePrenda.ZAPATILLAS, Material.ALGODON, Trama.LISA, new Color(), null),
-                new Prenda(TipoDePrenda.ZAPATOS, Material.ALGODON, Trama.LISA, new Color(), null)
-        );
-    }
+  public Guardarropas() {
+    this.prendasSuperiores = Arrays.asList(
+        new Prenda(TipoDePrenda.CAMISA_MANGA_CORTA, Material.ALGODON, Trama.LISA, new Color(), null),
+        new Prenda(TipoDePrenda.CHOMBA, Material.ALGODON, Trama.LISA, new Color(), null)
+    );
+    this.prendasInferiores = Arrays.asList(
+        new Prenda(TipoDePrenda.PANTALON, Material.ALGODON, Trama.LISA, new Color(), null)
+    );
+    this.calzados = Arrays.asList(
+        new Prenda(TipoDePrenda.ZAPATILLAS, Material.ALGODON, Trama.LISA, new Color(), null),
+        new Prenda(TipoDePrenda.ZAPATOS, Material.ALGODON, Trama.LISA, new Color(), null)
+    );
+    this.prendasCabezas = Arrays.asList(
+        new Prenda(TipoDePrenda.GORRO, Material.ALGODON, Trama.LISA, new Color(), null),
+        new Prenda(TipoDePrenda.SOMBRERO, Material.ALGODON, Trama.LISA, new Color(), null)
+    );
+  }
 
-    public List<Atuendo> sugerirAtuendos() {
-        return Arrays.asList(
-                new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado()),
-                new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado())
-        );
-    }
+  public List<Atuendo> sugerirAtuendos() {
+    return Arrays.asList(
+        new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado(), generarCabezas()),
+        new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado(), generarCabezas())
+    );
+  }
 
-    public Prenda generarParteSuperior() {
-        return this.prendasSuperiores.stream().findAny().get();
-    }
+  public Prenda generarParteSuperior() {
+    return this.prendasSuperiores.stream().findAny().get();
+  }
 
-    public Prenda generarParteInferior() {
-        return this.prendasSuperiores.stream().findAny().get();
-    }
+  public Prenda generarParteInferior() {
+    return this.prendasInferiores.stream().findAny().get();
+  }
 
-    public Prenda generarCalzado() {
-        return this.prendasSuperiores.stream().findAny().get();
-    }
+  public Prenda generarCalzado() {
+    return this.calzados.stream().findAny().get();
+  }
+
+  public Prenda generarCabezas() {
+    return this.prendasCabezas.stream().findAny().get();
+  }
 }
