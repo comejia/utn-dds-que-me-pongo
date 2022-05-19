@@ -2,7 +2,7 @@ package com.comejia.dds.clima;
 
 import java.util.Map;
 
-public class ServicioClimaAccuWeather {
+public class ServicioClimaAccuWeather implements ServicioClima {
 
   AccuWeatherAPI api;
 
@@ -10,6 +10,7 @@ public class ServicioClimaAccuWeather {
     this.api = api;
   }
 
+  @Override
   public CondicionClimatica obtenerCondicionesClimaticas(String ciudad) {
     Map<String, Object> consulta = consultarAPI(ciudad);
     int temperatura = getTemperatura(consulta);

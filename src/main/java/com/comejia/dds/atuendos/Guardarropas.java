@@ -28,7 +28,7 @@ public class Guardarropas {
     );
   }
 
-  public List<Atuendo> sugerirAtuendos(String ciudad) {
+  public List<Atuendo> generarAtuendos() {
     return Arrays.asList(
         new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado()),
         new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado())
