@@ -35,4 +35,7 @@ public class Prenda {
     return tipoDePrenda.categoria();
   }
 
+  public boolean aptaParaTemperatura(int temperatura) {
+    return this.tipoDePrenda.aptoParaTemperatura(temperatura);
+  }
 }
