@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ServicioClimaAccuWeather implements ServicioClima {
 
-  private final Map<String, Map<String, Object>> consultas;
+  private final Map<String, CondicionClimatica> consultas;
 
   private final AccuWeatherAPI apiClima;
 
@@ -20,13 +20,14 @@ public class ServicioClimaAccuWeather implements ServicioClima {
       this.consultas.put(ciudad, consultarAPI(ciudad));
     }
 
-    int temperatura = getTemperatura(this.consultas.get(ciudad));
-    int precipitacion = getPrecipitacion(this.consultas.get(ciudad));
-    return new CondicionClimatica(precipitacion, temperatura);
+    return this.consultas.get(ciudad);
   }
 
-  private Map<String, Object> consultarAPI(String ciudad) {
-    return this.apiClima.getWeather(ciudad).get(0);
+  private CondicionClimatica consultarAPI(String ciudad) {
+    Map<String, Object> consulta = this.apiClima.getWeather(ciudad).get(0);
+    int temperatura = getTemperatura(consulta);
+    int precipitacion = getPrecipitacion(consulta);
+    return new CondicionClimatica(precipitacion, temperatura);
   }
 
   private int getTemperatura(Map<String, Object> consulta) {
