@@ -1,5 +1,6 @@
 package com.comejia.dds.atuendos;
 
+import com.comejia.dds.clima.ServicioClimaAccuWeather;
 import com.comejia.dds.prenda.*;
 
 import java.util.Arrays;
@@ -10,6 +11,8 @@ public class Guardarropas {
   List<Prenda> prendasSuperiores;
   List<Prenda> prendasInferiores;
   List<Prenda> calzados;
+
+  ServicioClimaAccuWeather clima;
 
   public Guardarropas() {
     this.prendasSuperiores = Arrays.asList(
@@ -23,13 +26,9 @@ public class Guardarropas {
         new Prenda(TipoDePrenda.ZAPATILLAS, Material.ALGODON, Trama.LISA, new Color(), null),
         new Prenda(TipoDePrenda.ZAPATOS, Material.ALGODON, Trama.LISA, new Color(), null)
     );
-    this.prendasCabezas = Arrays.asList(
-        new Prenda(TipoDePrenda.GORRO, Material.ALGODON, Trama.LISA, new Color(), null),
-        new Prenda(TipoDePrenda.SOMBRERO, Material.ALGODON, Trama.LISA, new Color(), null)
-    );
   }
 
-  public List<Atuendo> sugerirAtuendos() {
+  public List<Atuendo> sugerirAtuendos(String ciudad) {
     return Arrays.asList(
         new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado()),
         new Atuendo(generarParteSuperior(), generarParteInferior(), generarCalzado())
