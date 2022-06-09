@@ -7,14 +7,16 @@ import java.util.List;
 
 public class Guardarropas {
 
+  private final List<Prenda> prendas;
   private final List<Prenda> prendasSuperiores;
   private final List<Prenda> prendasInferiores;
   private final List<Prenda> calzados;
 
-  public Guardarropas(List<Prenda> prendasSuperiores, List<Prenda> prendasInferiores, List<Prenda> calzados) {
+  public Guardarropas(List<Prenda> prendasSuperiores, List<Prenda> prendasInferiores, List<Prenda> calzados, List<Prenda> prendas) {
     this.prendasSuperiores = prendasSuperiores;
     this.prendasInferiores = prendasInferiores;
     this.calzados = calzados;
+    this.prendas = prendas;
   }
 
   public List<Atuendo> generarAtuendos() {
@@ -34,6 +36,14 @@ public class Guardarropas {
 
   public Prenda generarCalzado() {
     return this.calzados.stream().findAny().get();
+  }
+
+  public void agregarPrenda(Prenda prenda) {
+    this.prendas.add(prenda);
+  }
+
+  public void quitarPrenda(Prenda prenda) {
+    this.prendas.remove(prenda);
   }
 
 }

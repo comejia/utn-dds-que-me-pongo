@@ -13,8 +13,8 @@ public class ServicioMetereologicoAccuWeather implements ServicioMetereologico {
   @Override
   public CondicionClimatica obtenerCondicionClimatica(String ciudad) {
       Map<String, Object> clima = consultarAPI(ciudad);
-      int temperatura = getTemperatura(clima);
       int precipitacion = getPrecipitacion(clima);
+      int temperatura = getTemperatura(clima);
       return new CondicionClimatica(precipitacion, temperatura);
   }
 
