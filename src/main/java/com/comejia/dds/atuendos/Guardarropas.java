@@ -8,14 +8,8 @@ import java.util.List;
 public class Guardarropas {
 
   private final List<Prenda> prendas;
-  private final List<Prenda> prendasSuperiores;
-  private final List<Prenda> prendasInferiores;
-  private final List<Prenda> calzados;
 
-  public Guardarropas(List<Prenda> prendasSuperiores, List<Prenda> prendasInferiores, List<Prenda> calzados, List<Prenda> prendas) {
-    this.prendasSuperiores = prendasSuperiores;
-    this.prendasInferiores = prendasInferiores;
-    this.calzados = calzados;
+  public Guardarropas(List<Prenda> prendas) {
     this.prendas = prendas;
   }
 
@@ -27,15 +21,24 @@ public class Guardarropas {
   }
 
   public Prenda generarParteSuperior() {
-    return this.prendasSuperiores.stream().findAny().get();
+    return this.prendas.stream()
+        .filter(p -> p.categoria().equals(Categoria.PARTE_SUPERIOR))
+        .findFirst()
+        .orElseThrow(() -> new RuntimeException("No se encontraron prendas de la categoria Parte Superior"));
   }
 
   public Prenda generarParteInferior() {
-    return this.prendasInferiores.stream().findAny().get();
+    return this.prendas.stream()
+        .filter(p -> p.categoria().equals(Categoria.PARTE_INFERIOR))
+        .findFirst()
+        .orElseThrow(() -> new RuntimeException("No se encontraron prendas de la categoria Parte Inferior"));
   }
 
   public Prenda generarCalzado() {
-    return this.calzados.stream().findAny().get();
+    return this.prendas.stream()
+        .filter(p -> p.categoria().equals(Categoria.CALZADO))
+        .findFirst()
+        .orElseThrow(() -> new RuntimeException("No se encontraron prendas de la categoria Calzado"));
   }
 
   public void agregarPrenda(Prenda prenda) {
