@@ -2,12 +2,14 @@ package com.comejia.dds.atuendos;
 
 import com.comejia.dds.prenda.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Guardarropas {
 
   private final List<Prenda> prendas;
+  private final List<Propuesta> propuestas = new ArrayList<>();
 
   public Guardarropas(List<Prenda> prendas) {
     this.prendas = prendas;
@@ -47,6 +49,14 @@ public class Guardarropas {
 
   public void quitarPrenda(Prenda prenda) {
     this.prendas.remove(prenda);
+  }
+
+  public void agregarPropuesta(Propuesta propuesta) {
+    this.propuestas.add(propuesta);
+  }
+
+  public List<Propuesta> getPropuestas() {
+    return this.propuestas;
   }
 
 }
