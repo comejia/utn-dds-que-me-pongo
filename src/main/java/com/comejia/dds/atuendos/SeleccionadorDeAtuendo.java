@@ -20,6 +20,6 @@ public class SeleccionadorDeAtuendo {
     return atuendos.stream()
         .filter(atuendo -> atuendo.esAptoParaTemperatura(condicionClimatica.getTemperatura()))
         .findFirst()
-        .get();
+        .orElseThrow(() -> new RuntimeException("No se encontro atuendos acorde a la temperatura de la ciudad"));
   }
 }

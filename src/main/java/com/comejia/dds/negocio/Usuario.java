@@ -1,6 +1,7 @@
 package com.comejia.dds.negocio;
 
 import com.comejia.dds.atuendos.Guardarropas;
+import com.comejia.dds.atuendos.Propuesta;
 import com.comejia.dds.prenda.Prenda;
 
 import java.util.List;

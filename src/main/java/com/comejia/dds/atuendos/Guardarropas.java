@@ -5,6 +5,7 @@ import com.comejia.dds.prenda.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Guardarropas {
 
@@ -55,8 +56,12 @@ public class Guardarropas {
     this.propuestas.add(propuesta);
   }
 
-  public List<Propuesta> getPropuestas() {
-    return this.propuestas;
+  public List<Propuesta> propuestasPendientes() {
+    return this.propuestas.stream().filter(Propuesta::estaPendiente).collect(Collectors.toList());
+  }
+
+  public List<Propuesta> propuestasAceptadas() {
+    return this.propuestas.stream().filter(Propuesta::estaAceptada).collect(Collectors.toList());
   }
 
 }

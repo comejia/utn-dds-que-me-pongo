@@ -21,5 +21,20 @@ public abstract class Propuesta {
     this.estadoPropuesta = EstadoPropuesta.RECHAZADO;
   }
 
+  public void deshacerEn(Guardarropas guardarropas) {
+    this.estadoPropuesta = EstadoPropuesta.RECHAZADO;
+    deshacerModificacion(guardarropas);
+  }
+
   public abstract void realizarModificacion(Guardarropas guardarropas);
+
+  public abstract void deshacerModificacion(Guardarropas guardarropas);
+
+  public boolean estaPendiente() {
+    return this.estadoPropuesta == EstadoPropuesta.PENDIENTE;
+  }
+
+  public boolean estaAceptada() {
+    return this.estadoPropuesta == EstadoPropuesta.ACEPTADO;
+  }
 }

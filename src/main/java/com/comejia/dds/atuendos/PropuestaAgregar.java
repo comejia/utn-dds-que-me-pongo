@@ -13,4 +13,9 @@ public class PropuestaAgregar extends Propuesta {
     guardarropas.agregarPrenda(this.prenda);
   }
 
+  @Override
+  public void deshacerModificacion(Guardarropas guardarropas) {
+    guardarropas.quitarPrenda(this.prenda);
+  }
+
 }
