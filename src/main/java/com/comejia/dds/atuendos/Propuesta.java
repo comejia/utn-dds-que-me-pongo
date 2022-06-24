@@ -12,7 +12,7 @@ public abstract class Propuesta {
     this.prenda = prenda;
   }
 
-  public void aceptarEn(Guardarropas guardarropas) {
+  public void aceptar(Guardarropas guardarropas) {
     this.estadoPropuesta = EstadoPropuesta.ACEPTADO;
     realizarModificacion(guardarropas);
   }
@@ -21,7 +21,7 @@ public abstract class Propuesta {
     this.estadoPropuesta = EstadoPropuesta.RECHAZADO;
   }
 
-  public void deshacerEn(Guardarropas guardarropas) {
+  public void deshacer(Guardarropas guardarropas) {
     this.estadoPropuesta = EstadoPropuesta.RECHAZADO;
     deshacerModificacion(guardarropas);
   }

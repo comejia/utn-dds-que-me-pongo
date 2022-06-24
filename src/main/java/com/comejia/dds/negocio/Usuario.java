@@ -1,7 +1,6 @@
 package com.comejia.dds.negocio;
 
 import com.comejia.dds.atuendos.Guardarropas;
-import com.comejia.dds.atuendos.Propuesta;
 import com.comejia.dds.prenda.Prenda;
 
 import java.util.List;
@@ -22,8 +21,10 @@ public class Usuario {
     this.guardarropas.remove(guardarropas);
   }
 
-  public void crearGuardarropa(List<Prenda> prendas) {
-    guardarropas.add(new Guardarropas(prendas));
+  public Guardarropas crearGuardarropas(List<Prenda> prendas) {
+    Guardarropas guardarropas = new Guardarropas(prendas);
+    this.guardarropas.add(guardarropas);
+    return guardarropas;
   }
 
 }
