@@ -1,7 +1,11 @@
 package com.comejia.dds.clima;
 
+import java.util.List;
+
 public interface ServicioMetereologico {
 
-  public CondicionClimatica obtenerCondicionClimatica(String ciudad);
+  CondicionClimatica obtenerCondicionClimatica(String ciudad);
+
+  List<AlertaMeteorologica> getAlertasMeteorlogicas();
 
 }

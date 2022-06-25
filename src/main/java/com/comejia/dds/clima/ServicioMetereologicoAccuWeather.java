@@ -1,10 +1,13 @@
 package com.comejia.dds.clima;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class ServicioMetereologicoAccuWeather implements ServicioMetereologico {
 
   private final AccuWeatherAPI apiClima;
+  private List<AlertaMeteorologica> alertas;
 
   public ServicioMetereologicoAccuWeather(AccuWeatherAPI apiClima) {
     this.apiClima = apiClima;
@@ -33,5 +36,10 @@ public class ServicioMetereologicoAccuWeather implements ServicioMetereologico {
 
   private int getPrecipitacion(Map<String, Object> consulta) {
     return  (int) consulta.get("PrecipitationProbability");
+  }
+
+  @Override
+  public List<AlertaMeteorologica> getAlertasMeteorlogicas() {
+    return new ArrayList<>();
   }
 }

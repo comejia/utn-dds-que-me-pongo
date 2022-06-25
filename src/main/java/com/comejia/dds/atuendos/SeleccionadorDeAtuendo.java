@@ -2,11 +2,14 @@ package com.comejia.dds.atuendos;
 
 import com.comejia.dds.clima.CondicionClimatica;
 import com.comejia.dds.clima.ServicioMetereologico;
+import com.comejia.dds.negocio.RepositorioUsuarios;
+import com.comejia.dds.negocio.Usuario;
 
 import java.util.List;
 
 public class SeleccionadorDeAtuendo {
 
+  private RepositorioUsuarios repositorioUsuarios;
   private final ServicioMetereologico servicioMetereologico;
 
   public SeleccionadorDeAtuendo(ServicioMetereologico servicioMetereologico) {
@@ -21,5 +24,9 @@ public class SeleccionadorDeAtuendo {
         .filter(atuendo -> atuendo.esAptoParaTemperatura(condicionClimatica.getTemperatura()))
         .findFirst()
         .orElseThrow(() -> new RuntimeException("No se encontro atuendos acorde a la temperatura de la ciudad"));
+  }
+
+  public void calcularSugerenciasDiarias() {
+    repositorioUsuarios.getUsuarios().forEach(Usuario::calcularSugerenciaDiaria);
   }
 }

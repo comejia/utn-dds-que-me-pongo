@@ -1,9 +1,6 @@
 package com.comejia.dds.clima;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class AccuWeatherAPI {
 
@@ -23,5 +20,13 @@ public final class AccuWeatherAPI {
         put("UnitType", 18);
       }});
     }});
+  }
+
+  public Map<String, List<String>> getAlertas(String ciudad) {
+    return new HashMap<String, List<String>>() {{
+      put("Alerta", new ArrayList<String>() {{
+        add("GRANIZO");
+      }});
+    }};
   }
 }
